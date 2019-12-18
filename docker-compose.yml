@@ -1,0 +1,69 @@
+version: '3'
+
+services:
+
+  sql_influx:
+    container_name: sql_influx
+    build: ./sql_influx
+    command: python /usr/src/app/main.py
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - influxdb
+    links:
+      - influxdb
+    networks:
+      - influxdb
+    volumes:
+      - ./sql_influx:/usr/src/app
+      - /etc/pihole/:/etc/pihole
+    restart: unless-stopped
+
+  telegraf:
+    image: arm32v7/telegraf:latest
+    container_name: telegraf
+    depends_on:
+      - influxdb
+    links:
+      - influxdb
+    networks:
+      - influxdb
+    devices:
+      - /dev/vchiq
+      - /dev/vcsm
+    volumes:
+      - ./telegraf:/etc/telegraf
+      - /opt/vc:/opt/vc
+    restart: always
+
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    networks:
+      influxdb:
+    volumes:
+      - influxdb-storage:/var/lib/influxdb
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    depends_on:
+      - influxdb
+    ports:
+      - 3000:3000
+    networks:
+      - influxdb
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    restart: unless-stopped
+
+volumes:
+  grafana-storage:
+  influxdb-storage:
+
+networks:
+  influxdb:
