@@ -13,13 +13,17 @@ This project was developed on a raspberry pi 4. As such, some of the commands mi
 1. Install Docker
 
   `curl -sSL https://get.docker.com | sh`
+
 2. Add permission to Pi User to run Docker Commands
 
   `sudo usermod -aG docker pi`
+  
 3. Reboot!
+
 4. Test Docker installation
 
   `docker run hello-world`
+  
 5. Install dependencies
 
   `sudo apt-get install libffi-dev libssl-dev`
