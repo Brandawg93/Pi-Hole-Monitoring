@@ -10,6 +10,8 @@ This project was developed on a raspberry pi 4. As such, some of the commands mi
 - You need a working copy of Pi-Hole with its `pihole-FTL.db` file located at `/etc/pihole/` (i.e. this doesn't work with Pi-Hole Docker containers or special installations).
 
 ## Instructions ##
+(If you have already installed docker-compose skip to step 7.)
+
 1. Install Docker
 
   `curl -sSL https://get.docker.com | sh`
