@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 4220,
   "graphTooltip": 0,
-  "iteration": 1576637436799,
+  "iteration": 1576687482157,
   "links": [
     {
       "icon": "external link",
@@ -47,7 +47,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 2,
+        "h": 3,
         "w": 4,
         "x": 0,
         "y": 0
@@ -138,7 +138,7 @@
         "#d44a3a"
       ],
       "datasource": "InfluxDB",
-      "format": "none",
+      "format": "locale",
       "gauge": {
         "maxValue": 500000,
         "minValue": 0,
@@ -147,8 +147,8 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 5,
-        "w": 4,
+        "h": 6,
+        "w": 5,
         "x": 4,
         "y": 0
       },
@@ -249,21 +249,21 @@
         "#d44a3a"
       ],
       "datasource": "InfluxDB",
-      "format": "none",
+      "format": "locale",
       "gauge": {
-        "maxValue": 500000,
+        "maxValue": 20000,
         "minValue": 0,
         "show": true,
         "thresholdLabels": false,
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 5,
-        "w": 4,
-        "x": 8,
+        "h": 6,
+        "w": 6,
+        "x": 9,
         "y": 0
       },
-      "id": 29,
+      "id": 27,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -324,7 +324,7 @@
             [
               {
                 "params": [
-                  "queries_cached"
+                  "ads_blocked_today"
                 ],
                 "type": "field"
               },
@@ -337,8 +337,8 @@
           "tags": []
         }
       ],
-      "thresholds": "500000",
-      "title": "Cached DNS Queries",
+      "thresholds": "5000,10000",
+      "title": "Number of Blocked Queries",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -369,9 +369,9 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 5,
-        "w": 4,
-        "x": 12,
+        "h": 6,
+        "w": 5,
+        "x": 15,
         "y": 0
       },
       "id": 28,
@@ -471,21 +471,21 @@
         "#d44a3a"
       ],
       "datasource": "InfluxDB",
-      "format": "none",
+      "format": "locale",
       "gauge": {
-        "maxValue": 20000,
+        "maxValue": 100,
         "minValue": 0,
-        "show": true,
+        "show": false,
         "thresholdLabels": false,
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 5,
+        "h": 3,
         "w": 4,
-        "x": 16,
+        "x": 20,
         "y": 0
       },
-      "id": 27,
+      "id": 41,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -503,6 +503,7 @@
       "nullPointMode": "connected",
       "nullText": null,
       "options": {},
+      "pluginVersion": "6.5.2",
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -518,7 +519,9 @@
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
         "lineColor": "rgb(31, 120, 193)",
-        "show": false
+        "show": false,
+        "ymax": null,
+        "ymin": null
       },
       "tableColumn": "",
       "targets": [
@@ -546,7 +549,7 @@
             [
               {
                 "params": [
-                  "ads_blocked_today"
+                  "domains_being_blocked"
                 ],
                 "type": "field"
               },
@@ -559,8 +562,10 @@
           "tags": []
         }
       ],
-      "thresholds": "5000,10000",
-      "title": "Number of Blocked Queries",
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Domains on Blocklist",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -570,139 +575,7 @@
           "value": "null"
         }
       ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": true,
-      "colors": [
-        "rgba(50, 172, 45, 0.97)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(245, 54, 54, 0.9)"
-      ],
-      "datasource": "InfluxDB",
-      "editable": true,
-      "error": false,
-      "format": "percent",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": true,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 4,
-        "x": 20,
-        "y": 0
-      },
-      "id": 2,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "dsType": "InfluxDB",
-          "groupBy": [
-            {
-              "params": [
-                "$Interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "cpu",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "usage_idle"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "* -1 + 100"
-                ],
-                "type": "math"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$Server$/"
-            },
-            {
-              "condition": "AND",
-              "key": "cpu",
-              "operator": "=",
-              "value": "cpu-total"
-            }
-          ]
-        }
-      ],
-      "thresholds": "60,80,90",
-      "title": "CPU",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
+      "valueName": "avg"
     },
     {
       "cacheTimeout": null,
@@ -729,7 +602,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 2
+        "y": 3
       },
       "id": 1,
       "interval": null,
@@ -827,6 +700,117 @@
       "valueName": "current"
     },
     {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "InfluxDB",
+      "format": "locale",
+      "gauge": {
+        "maxValue": 500000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 3
+      },
+      "id": 29,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "http_pihole",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "queries_cached"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "500000",
+      "title": "Cached DNS Queries",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -838,7 +822,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 6
       },
       "hiddenSeries": false,
       "id": 33,
@@ -1004,63 +988,45 @@
       }
     },
     {
+      "aliasColors": {},
+      "breakPoint": "50%",
       "cacheTimeout": null,
-      "columns": [],
+      "combine": {
+        "label": "Others",
+        "threshold": "0.02"
+      },
       "datasource": "Pihole-FTL",
-      "fontSize": "100%",
+      "decimals": null,
+      "fontSize": "80%",
+      "format": "locale",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 12
+        "y": 13
       },
-      "id": 35,
+      "id": 45,
+      "interval": null,
+      "legend": {
+        "header": "Hits",
+        "percentage": true,
+        "percentageDecimals": null,
+        "show": true,
+        "sideWidth": null,
+        "sort": "total",
+        "sortDesc": true,
+        "values": true
+      },
+      "legendType": "Right side",
       "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
       "options": {},
-      "pageSize": null,
-      "pluginVersion": "6.5.2",
-      "showHeader": true,
-      "sort": {
-        "col": 2,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "Time",
-          "thresholds": [],
-          "type": "date",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "mappingType": 1,
-          "pattern": "count",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        }
-      ],
+      "pieType": "donut",
+      "strokeWidth": "2",
       "targets": [
         {
-          "alias": "",
+          "alias": "$tag_domain",
           "groupBy": [
             {
               "params": [
@@ -1073,27 +1039,117 @@
                 "domain"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
             }
           ],
-          "limit": "",
           "measurement": "pihole-FTL",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT domain, top(top_domains, 10) FROM (SELECT count(\"domain\") as top_domains FROM \"pihole-FTL\" WHERE $timeFilter GROUP BY time($__interval), \"domain\" fill(null))",
-          "rawQuery": true,
+          "query": "SELECT count(\"id\") FROM \"pihole-FTL\" WHERE $timeFilter GROUP BY time($__interval), \"domain\"",
+          "rawQuery": false,
           "refId": "A",
-          "resultFormat": "table",
+          "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "domain"
+                  "id"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "slimit": "",
+          "tags": [
+            {
+              "key": "status",
+              "operator": "!=",
+              "value": "2"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "!=",
+              "value": "3"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top Ads by Domain",
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": "0.02"
+      },
+      "datasource": "Pihole-FTL",
+      "decimals": null,
+      "fontSize": "80%",
+      "format": "locale",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 13
+      },
+      "id": 43,
+      "interval": null,
+      "legend": {
+        "header": "Hits",
+        "percentage": true,
+        "percentageDecimals": null,
+        "show": true,
+        "sideWidth": null,
+        "sort": "total",
+        "sortDesc": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "donut",
+      "strokeWidth": "2",
+      "targets": [
+        {
+          "alias": "$tag_domain",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "domain"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "pihole-FTL",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"id\") FROM \"pihole-FTL\" WHERE $timeFilter GROUP BY time($__interval), \"domain\"",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "id"
                 ],
                 "type": "field"
               },
@@ -1109,64 +1165,50 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Top Domains",
-      "transform": "table",
-      "type": "table"
+      "title": "Top Queries by Domain",
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
     },
     {
-      "columns": [],
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": "0.02"
+      },
       "datasource": "Pihole-FTL",
-      "fontSize": "100%",
+      "decimals": null,
+      "fontSize": "80%",
+      "format": "locale",
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 12,
-        "y": 12
+        "x": 0,
+        "y": 21
       },
-      "id": 37,
+      "id": 44,
+      "interval": null,
+      "legend": {
+        "header": "Requests",
+        "percentage": true,
+        "percentageDecimals": null,
+        "show": true,
+        "sideWidth": null,
+        "sort": "total",
+        "sortDesc": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
       "options": {},
-      "pageSize": null,
-      "showHeader": true,
-      "sort": {
-        "col": 2,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "Time",
-          "thresholds": [],
-          "type": "date",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "mappingType": 1,
-          "pattern": "top",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        }
-      ],
+      "pieType": "donut",
+      "strokeWidth": "2",
       "targets": [
         {
+          "alias": "$tag_client",
           "groupBy": [
             {
               "params": [
@@ -1176,39 +1218,126 @@
             },
             {
               "params": [
-                "null"
+                "client"
               ],
-              "type": "fill"
+              "type": "tag"
             }
           ],
+          "measurement": "pihole-FTL",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT client, top(top_clients , 10) FROM (SELECT count(\"client\") as top_clients FROM \"pihole-FTL\" WHERE $timeFilter GROUP BY time($__interval), \"client\" fill(null))",
-          "rawQuery": true,
+          "query": "SELECT count(\"id\") FROM \"pihole-FTL\" WHERE $timeFilter GROUP BY time($__interval), \"domain\"",
+          "rawQuery": false,
           "refId": "A",
-          "resultFormat": "table",
+          "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "value"
+                  "id"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "count"
               }
             ]
           ],
+          "slimit": "",
           "tags": []
         }
       ],
       "timeFrom": null,
       "timeShift": null,
       "title": "Top Clients",
-      "transform": "table",
-      "type": "table"
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": "0.02"
+      },
+      "datasource": "Pihole-FTL",
+      "decimals": null,
+      "fontSize": "80%",
+      "format": "locale",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 21
+      },
+      "id": 47,
+      "interval": null,
+      "legend": {
+        "header": "Hits",
+        "percentage": true,
+        "percentageDecimals": null,
+        "show": true,
+        "sideWidth": null,
+        "sort": "total",
+        "sortDesc": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "donut",
+      "strokeWidth": "2",
+      "targets": [
+        {
+          "alias": "$tag_forward",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "forward"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "pihole-FTL",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"id\") FROM \"pihole-FTL\" WHERE $timeFilter GROUP BY time($__interval), \"domain\"",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "id"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "slimit": "",
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Forwarded Destinations",
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
     },
     {
       "aliasColors": {},
@@ -1222,7 +1351,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 29
       },
       "hiddenSeries": false,
       "id": 31,
@@ -1420,7 +1549,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 27
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1808,7 +1937,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 27
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 5,
@@ -2069,7 +2198,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 27
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 17,
@@ -2397,7 +2526,7 @@
     ]
   },
   "time": {
-    "from": "now-4d",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -2428,5 +2557,5 @@
   "timezone": "browser",
   "title": "Pi Hole",
   "uid": "B-xeNrekk",
-  "version": 4
+  "version": 1
 }

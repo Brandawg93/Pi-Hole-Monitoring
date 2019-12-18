@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
 
   telegraf:
-    image: arm32v7/telegraf:latest
+    image: arm32v7/telegraf:latest # This may need to be changed depending on you OS
     container_name: telegraf
     depends_on:
       - influxdb

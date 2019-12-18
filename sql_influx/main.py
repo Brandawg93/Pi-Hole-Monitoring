@@ -1,5 +1,5 @@
 from sqlite3 import connect
-from datetime import datetime
+from influxdb import InfluxDBClient
 import sys
 import time
 import json
@@ -8,12 +8,11 @@ import requests
 row = None
 last_id = None
 query = "SELECT * FROM queries WHERE id = (SELECT MAX(id) FROM queries)"
-url = "http://influxdb:8086/write?db=pihole-FTL"
+client = InfluxDBClient(host='influxdb', port=8086, database='pihole-FTL')
 
 while True:
 	try:
-		data = {'q': 'CREATE DATABASE "pihole-FTL"'}
-		requests.post("http://influxdb:8086/query", data=data)
+		client.create_database('pihole-FTL')
 		break
 	except requests.exceptions.ConnectionError:
 		print('Could not connect. Retrying...')
@@ -40,8 +39,23 @@ while True:
 
 			if row and id != last_id:
 				for item in rows:
-					data = 'pihole-FTL,domain="{}",client="{}" id={},timestamp={},type={},status={},domain="{}",client="{}",forward="{}"'.format(item[4], item[5], item[0], item[1], item[2], item[3], item[4], item[5], item[6])
-					r = requests.post(url, data=data)
+					json_body = [
+						{
+							"measurement": "pihole-FTL",
+							"tags": {
+								"type": item[2],
+								"status": item[3],
+								"domain": item[4],
+								"client": item[5],
+								"forward": item[6]
+							},
+							"time": time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(item[1])),
+							"fields": {
+								"id": item[0]
+							}
+						}
+					]
+					client.write_points(json_body)
 			else:
 				time.sleep(5)
 	except KeyboardInterrupt:
