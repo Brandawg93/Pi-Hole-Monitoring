@@ -5,26 +5,21 @@ services:
   sql_influx:
     container_name: sql_influx
     build: ./sql_influx
-    command: python /usr/src/app/main.py
+    command: python main.py
     environment:
       - PYTHONUNBUFFERED=1
     depends_on:
       - influxdb
-    links:
-      - influxdb
     networks:
       - influxdb
     volumes:
-      - ./sql_influx:/usr/src/app
       - /etc/pihole/:/etc/pihole
     restart: unless-stopped
 
   telegraf:
-    image: arm32v7/telegraf:latest # This may need to be changed depending on you OS
+    image: telegraf:latest
     container_name: telegraf
     depends_on:
-      - influxdb
-    links:
       - influxdb
     networks:
       - influxdb
