@@ -7,7 +7,7 @@ This package was built for the sole purpose of making the installation of grafan
 <img src="https://i.imgur.com/i2zoeb0.png" width=300/><img src="https://i.imgur.com/x4AssYP.png" width=300/>
 
 ## Notes ##
-This project was developed on a raspberry pi 4. As such, some of the commands might be different for different OSes. As an example, the telegraf package used is `arm32v7` and [may need to be changed](https://github.com/Brandawg93/Pi-Hole-Monitoring/blob/master/docker-compose.yml#L23).
+This project was developed on raspbian buster which is 32 bit. As such, some of the commands might be different for different OSes. As an example, the telegraf package used is `arm32v7` and [may need to be changed](https://github.com/Brandawg93/Pi-Hole-Monitoring/blob/master/docker-compose.yml#L23).
 
 ## Prerequisites ##
 - You need a working copy of Pi-Hole with its `pihole-FTL.db` file located at `/etc/pihole/` (i.e. this doesn't work out-of-the-box with Pi-Hole Docker containers or special installations). If your Pi-Hole instance is not located there, simply change [this line of code](https://github.com/Brandawg93/Pi-Hole-Monitoring/blob/master/docker-compose.yml#L19) to point to the folder that contains `pihole-FTL.db`.
