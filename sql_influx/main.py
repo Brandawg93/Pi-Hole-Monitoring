@@ -6,7 +6,8 @@ import json
 import requests
 
 client = InfluxDBClient(host='influxdb', port=8086, database='pihole-FTL')
-
+types = ['A (IPv4)', 'AAAA (IPv6)', 'ANY', 'SRV', 'SOA', 'PTR', 'TXT']
+statuses = ['Unknown', 'blocklist', 'localhost', 'cache', 'blocklist', 'blocklist', 'blocklist', 'blocklist', 'blocklist']
 
 def wait_for_connection():
 	'''wait for a connection from the influxdb'''
@@ -56,8 +57,8 @@ def add_new_results(last_id):
 							{
 								"measurement": "pihole-FTL",
 								"tags": {
-									"type": item[2],
-									"status": item[3],
+									"type": types[item[2] - 1],
+									"status": statuses[item[3]],
 									"domain": item[4],
 									"client": item[5],
 									"forward": item[6]
