@@ -40,18 +40,26 @@ This project was developed on raspbian buster which is 32 bit. As such, some of 
 6. Install Docker Compose
 
   `sudo pip install docker-compose`
+  
+7. Clone this repo
 
-7. Start the stack
+  `git clone https://github.com/Brandawg93/Pi-Hole-Monitoring.git`
+  
+8. Change directory into cloned repo
+
+  `cd Pi-Hole-Monitoring`
+
+9. Start the stack
 
   `docker-compose up -d`
 
-8. Go to http://host_ip:3000 (where host_ip is the ip of the machine running the stack)
+10. Go to http://host_ip:3000 (where host_ip is the ip of the machine running the stack)
 
-9. Type `admin` for the username and `admin` for the password
+11. Type `admin` for the username and `admin` for the password
 
-10. Set your new password
+12. Set your new password
 
-11. Done!
+13. Done!
 
 ## Updating ##
 This is an ongoing project that may be updated frequently. If you would like the update your instance of Pi-Hole Monitoring, simply run the following commands:
