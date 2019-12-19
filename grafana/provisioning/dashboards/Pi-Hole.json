@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 4220,
   "graphTooltip": 0,
-  "iteration": 1576721524641,
+  "iteration": 1576759466107,
   "links": [
     {
       "icon": "external link",
@@ -219,6 +219,7 @@
           "tags": []
         }
       ],
+      "timeFrom": "24h",
       "title": "DNS Queries",
       "type": "gauge"
     },
@@ -313,6 +314,7 @@
           "tags": []
         }
       ],
+      "timeFrom": "24h",
       "title": "Number of Blocked Queries",
       "type": "gauge"
     },
@@ -407,6 +409,7 @@
           "tags": []
         }
       ],
+      "timeFrom": "24h",
       "title": "Blocked %age",
       "type": "gauge"
     },
@@ -1911,7 +1914,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
