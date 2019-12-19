@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 4220,
   "graphTooltip": 0,
-  "iteration": 1576720573015,
+  "iteration": 1576721524641,
   "links": [
     {
       "icon": "external link",
@@ -838,14 +838,8 @@
           "tags": [
             {
               "key": "status",
-              "operator": "!=",
-              "value": "2"
-            },
-            {
-              "condition": "AND",
-              "key": "status",
-              "operator": "!=",
-              "value": "3"
+              "operator": "=",
+              "value": "blocklist"
             }
           ]
         }
