@@ -50,3 +50,11 @@ This project was developed on a raspberry pi 4. As such, some of the commands mi
 
 11. Done!
 
+## Updating ##
+This is an ongoing project that may be updated frequently. If you would like the update your instance of Pi-Hole Monitoring, simply run the following commands:
+
+`docker-compose down`
+
+`git pull origin master`
+
+`docker-compose up -d`
