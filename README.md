@@ -10,8 +10,9 @@ This package was built for the sole purpose of making the installation of grafan
 - You need a working copy of Pi-Hole with its `pihole-FTL.db` file located at `/etc/pihole/` (i.e. this doesn't work out-of-the-box with Pi-Hole Docker containers or special installations). If your Pi-Hole instance is not located there, simply change [this line of code](https://github.com/Brandawg93/Pi-Hole-Monitoring/blob/master/docker-compose.yml#L16) to point to the folder that contains `pihole-FTL.db`.
 
 ## Known Issues ##
-This project was developed on raspbian buster. As such, issues may arise when running this on anything else. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/3#issuecomment-568185900) for more details.
+- This project was developed on raspbian buster. As such, issues may arise when running this on anything else. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/3#issuecomment-568185900) for more details.
 
+- This project will not work on any #lite# versions of raspbian. The lite versions do not come with all the necessary files to run the stack. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/6) for more details.
 ## Instructions ##
 (If you have already installed docker-compose skip to step 7.)
 
