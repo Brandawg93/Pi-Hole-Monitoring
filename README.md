@@ -12,7 +12,7 @@ This package was built for the sole purpose of making the installation of grafan
 ## Known Issues ##
 - This project was developed on raspbian buster. As such, issues may arise when running this on anything else. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/3#issuecomment-568185900) for more details.
 
-- This project will not work on any #lite# versions of raspbian. The lite versions do not come with all the necessary files to run the stack. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/6) for more details.
+- This project will not work on any *lite* versions of raspbian. The lite versions do not come with all the necessary files to run the stack. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/6) for more details.
 ## Instructions ##
 (If you have already installed docker-compose skip to step 7.)
 
