@@ -11,9 +11,8 @@ This package was built for the sole purpose of making the installation of grafan
 
 - You need to be able to view the Pi-Hole admin page at `http://pi.hole/admin`.
 ## Known Issues ##
-- This project was developed on raspbian buster. As such, issues may arise when running this on anything else. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/3#issuecomment-568185900) for more details.
-
 - This project will not work on any *lite* versions of raspbian. The lite versions do not come with all the necessary files to run the stack. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/6) for more details.
+
 ## Instructions ##
 (If you have already installed docker-compose skip to step 7.)
 
@@ -54,6 +53,8 @@ This package was built for the sole purpose of making the installation of grafan
 9. Start the stack
 
   `docker-compose up -d`
+
+  **Note:** If you are not running on a raspberry pi, run `docker-compose -f vm-docker-compose.yml up -d` instead.
 
 10. Go to http://host_ip:3000 (where host_ip is the ip of the machine running the stack)
 
