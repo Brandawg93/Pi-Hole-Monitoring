@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 4220,
   "graphTooltip": 0,
-  "iteration": 1576704594755,
+  "iteration": 1577132855195,
   "links": [
     {
       "icon": "external link",
@@ -327,7 +327,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "exec_pi_temp",
+          "measurement": "temp",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -647,7 +647,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "exec_pi_temp",
+          "measurement": "temp",
           "orderByTime": "ASC",
           "policy": "default",
           "query": "SELECT mean(\"cpu\")  / 1000 FROM \"exec_pi_temp\" WHERE $timeFilter GROUP BY time(1m) fill(null)",
@@ -3163,7 +3163,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {

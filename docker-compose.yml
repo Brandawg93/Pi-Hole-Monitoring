@@ -23,12 +23,8 @@ services:
       - influxdb
     networks:
       - influxdb
-    devices:
-      - /dev/vchiq
-      - /dev/vcsm
     volumes:
       - ./telegraf:/etc/telegraf
-      - /opt/vc:/opt/vc
     restart: always
 
   influxdb:

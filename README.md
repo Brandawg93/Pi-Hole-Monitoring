@@ -54,8 +54,6 @@ This package was built for the sole purpose of making the installation of grafan
 
   `docker-compose up -d`
 
-  **Note:** If you are not running on a raspberry pi, run `docker-compose -f vm-docker-compose.yml up -d` instead.
-
 10. Go to http://host_ip:3000 (where host_ip is the ip of the machine running the stack)
 
 11. Type `admin` for the username and `admin` for the password
