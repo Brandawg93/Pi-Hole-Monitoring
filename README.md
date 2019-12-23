@@ -1,13 +1,16 @@
 # Pi-Hole Monitoring with Grafana #
 
 ## Overview ##
-This package was built for the sole purpose of making the installation of grafana, telegraf, and influxdb to monitor a Pi-Hole instance as painless as possible. Typically, a user would need lots of setup to on each package in order to correctly monitor Pi-Hole. This package does as much as possible for you. No installing each package, no exposing ports on your machine, and no searching for hours on how to build and copy grafana dashboards. It's all already included here. Just follow the instructions below and enjoy!
+This package was built for the sole purpose of making the installation of grafana, telegraf, and influxdb to monitor a Pi-Hole instance as painless as possible. Typically, a user would need lots of setup on each package in order to correctly monitor Pi-Hole. This package does as much as possible for you. No installing each package, no exposing ports on your machine, and no searching for hours on how to build and copy grafana dashboards. It's all already included here. Just follow the instructions below and enjoy!
 
 ## Example Dashboards ##
 <img src="https://i.imgur.com/i2zoeb0.png" width=300/><img src="https://i.imgur.com/x4AssYP.png" width=300/>
 
 ## Prerequisites ##
 - You need a working copy of Pi-Hole with its `pihole-FTL.db` file located at `/etc/pihole/` (i.e. this doesn't work out-of-the-box with Pi-Hole Docker containers or special installations). If your Pi-Hole instance is not located there, simply change [this line of code](https://github.com/Brandawg93/Pi-Hole-Monitoring/blob/master/docker-compose.yml#L16) to point to the folder that contains `pihole-FTL.db`.
+
+## Known Issues ##
+This project was developed on raspbian buster. As such, issues may arise when running this on anything else. See [this issue](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/3#issuecomment-568185900) for more details.
 
 ## Instructions ##
 (If you have already installed docker-compose skip to step 7.)
