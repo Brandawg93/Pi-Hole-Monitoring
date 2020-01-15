@@ -19,6 +19,7 @@ services:
   telegraf:
     image: telegraf:latest
     container_name: telegraf
+    command: --config-directory /etc/telegraf/telegraf.d
     depends_on:
       - influxdb
     networks:
