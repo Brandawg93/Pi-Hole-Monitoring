@@ -7,7 +7,7 @@ import requests
 
 client = InfluxDBClient(host='influxdb', port=8086, database='pihole-FTL')
 types = ['A (IPv4)', 'AAAA (IPv6)', 'ANY', 'SRV', 'SOA', 'PTR', 'TXT']
-statuses = ['Unknown', 'blocklist', 'localhost', 'cache', 'blocklist', 'blocklist', 'blocklist', 'blocklist', 'blocklist']
+statuses = ['Unknown', 'blocklist', 'localhost', 'cache', 'blocklist', 'blocklist', 'blocklist', 'blocklist', 'blocklist', 'blocklist', 'blocklist', 'blocklist']
 
 def wait_for_connection():
 	'''wait for a connection from the influxdb'''
