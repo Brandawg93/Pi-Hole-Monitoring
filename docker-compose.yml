@@ -8,6 +8,9 @@ services:
     command: python main.py
     environment:
       - PYTHONUNBUFFERED=1
+      - PIHOLE_FTL_DB='/etc/pihole/pihole-FTL.db'
+      - INFLUXDB_HOST=influxdb
+      - INFLUXDB_PORT=8086
     depends_on:
       - influxdb
     networks:
