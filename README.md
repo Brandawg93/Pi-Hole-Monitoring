@@ -9,7 +9,7 @@ This package was built for the sole purpose of making the installation of grafan
 <img src="https://i.imgur.com/i2zoeb0.png" width=300/><img src="https://i.imgur.com/x4AssYP.png" width=300/>
 
 ## Prerequisites ##
-- You need a working copy of Pi-Hole with its `pihole-FTL.db` file located at `/etc/pihole/` (i.e. this doesn't work out-of-the-box with Pi-Hole Docker containers or special installations). If your Pi-Hole instance is not located there, simply change [this line of code](https://github.com/Brandawg93/Pi-Hole-Monitoring/blob/master/docker-compose.yml#L16) to point to the folder that contains `pihole-FTL.db`.
+- You need a working copy of Pi-Hole with its `pihole-FTL.db` file located at `/etc/pihole/` (i.e. this doesn't work out-of-the-box with Pi-Hole Docker containers or special installations). If your Pi-Hole instance is not located there, simply edit [this line of code](https://github.com/Brandawg93/Pi-Hole-Monitoring/blob/master/docker-compose.yml#L11) to point to the `pihole-FTL.db`.
 
 - You need to be able to view the Pi-Hole admin page at `http://pi.hole/admin`.
 ## Known Issues ##
