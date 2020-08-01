@@ -7,3 +7,7 @@
 ## 2020-07-31
 
 - Environment variable has been added for `PIHOLE_API_URL` to allow users to exchange `http://pi.hole/admin` with the pihole instance's custom IP address.
+
+## 2020-08-01
+
+- Fixed duplicate data points (closes #16)
