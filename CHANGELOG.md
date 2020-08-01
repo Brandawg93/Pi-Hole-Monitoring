@@ -10,4 +10,4 @@
 
 ## 2020-08-01
 
-- Fixed duplicate data points (closes #16)
+- Fixed duplicate data points (closes [#16](https://github.com/Brandawg93/Pi-Hole-Monitoring/issues/16))
