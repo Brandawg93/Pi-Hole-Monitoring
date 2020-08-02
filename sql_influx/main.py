@@ -10,7 +10,7 @@ INFLUXDB_HOST = environ['INFLUXDB_HOST']
 INFLUXDB_PORT = environ['INFLUXDB_PORT']
 
 client = InfluxDBClient(host=INFLUXDB_HOST, port=INFLUXDB_PORT, database='pihole-FTL')
-types = ['A (IPv4)', 'AAAA (IPv6)', 'ANY', 'SRV', 'SOA', 'PTR', 'TXT']
+types = ['A (IPv4)', 'AAAA (IPv6)', 'ANY', 'SRV', 'SOA', 'PTR', 'TXT','','','','','','UNKN']
 statuses = ['Unknown', 'blocklist', 'localhost', 'cache', 'blocklist', 'blocklist', 'blocklist', 'blocklist',
             'blocklist', 'blocklist', 'blocklist', 'blocklist']
 
