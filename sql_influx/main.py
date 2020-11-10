@@ -63,7 +63,7 @@ def add_new_results(last_id):
                             {
                                 "measurement": "pihole-FTL",
                                 "tags": {
-                                    "uniq": item[0],
+                                    "uniq": item[0] % 1000,
                                     "type": types[item[2] - 1],
                                     "status": statuses[item[3]],
                                     "domain": item[4],
