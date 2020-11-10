@@ -70,7 +70,7 @@ def add_new_results(last_id):
                                     "client": item[5],
                                     "forward": item[6]
                                 },
-                                "time": time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(item[1])),
+                                "time": time.strftime('%Y-%m-%dT%H:%M:%S', time.gmtime(item[1])),
                                 "fields": {
                                     "id": item[0]
                                 }
