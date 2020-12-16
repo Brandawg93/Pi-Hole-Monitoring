@@ -102,8 +102,8 @@ def add_new_results(last_id):
                                 "measurement": "pihole-FTL",
                                 "tags": {
                                     "uniq": item[0] % 1000,
-                                    "type": status_type,
-                                    "status": query_type,
+                                    "type": query_type,
+                                    "status": status_type,
                                     "domain": item[4],
                                     "client": item[5],
                                     "forward": item[6]
