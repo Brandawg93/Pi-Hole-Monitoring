@@ -23,7 +23,7 @@ types = [
     'DS',
     'RRSIG',
     'DNSKEY',
-    'OTHER'
+    'OTHER',
 ]
 statuses = [
     'Unknown',
@@ -38,6 +38,8 @@ statuses = [
     'blocklist',  # Deep CNAME Gravity Database
     'blocklist',  # Deep CNAME regex blacklist
     'blocklist',  # Deep CNAME exact blacklist
+    'retired',  # https://github.com/pi-hole/FTL/pull/901
+    'retired_dnssec',  # https://github.com/pi-hole/FTL/pull/901
 ]
 
 
