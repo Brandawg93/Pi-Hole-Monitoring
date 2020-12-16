@@ -10,9 +10,35 @@ INFLUXDB_HOST = environ['INFLUXDB_HOST']
 INFLUXDB_PORT = environ['INFLUXDB_PORT']
 
 client = InfluxDBClient(host=INFLUXDB_HOST, port=INFLUXDB_PORT, database='pihole-FTL')
-types = ['A (IPv4)', 'AAAA (IPv6)', 'ANY', 'SRV', 'SOA', 'PTR', 'TXT','','','','','','UNKN']
-statuses = ['Unknown', 'blocklist', 'localhost', 'cache', 'blocklist', 'blocklist', 'blocklist', 'blocklist',
-            'blocklist', 'blocklist', 'blocklist', 'blocklist']
+types = [
+    'A (IPv4)',
+    'AAAA (IPv6)',
+    'ANY',
+    'SRV',
+    'SOA',
+    'PTR',
+    'TXT',
+    'NAPTR',
+    'MX',
+    'DS',
+    'RRSIG',
+    'DNSKEY',
+    'OTHER'
+]
+statuses = [
+    'Unknown',
+    'blocklist',  # Gravity Database
+    'localhost',
+    'cache',
+    'blocklist',  # Regex Blacklist
+    'blocklist',  # Exact Blacklist
+    'blocklist',  # Upstream Server
+    'blocklist',  # Upstream Server
+    'blocklist',  # Upstream Server
+    'blocklist',  # Deep CNAME Gravity Database
+    'blocklist',  # Deep CNAME regex blacklist
+    'blocklist',  # Deep CNAME exact blacklist
+]
 
 
 def wait_for_connection():
@@ -59,13 +85,25 @@ def add_new_results(last_id):
 
                 if row and curr_id != last_id:
                     for item in rows:
+                        try:
+                            status_type = statuses[item[3]]
+                        except IndexError:
+                            # If this message appears, consult https://docs.pi-hole.net/database/ftl
+                            print(f"Invalid Status Type: {item[3]}")
+                            continue
+                        try:
+                            query_type = types[item[2] - 1]
+                        except IndexError:
+                            # If this message appears, consult https://docs.pi-hole.net/database/ftl
+                            print(f"Invalid Query Type: {item[2] - 1}")
+                            continue
                         json_body = [
                             {
                                 "measurement": "pihole-FTL",
                                 "tags": {
                                     "uniq": item[0] % 1000,
-                                    "type": types[item[2] - 1],
-                                    "status": statuses[item[3]],
+                                    "type": status_type,
+                                    "status": query_type,
                                     "domain": item[4],
                                     "client": item[5],
                                     "forward": item[6]
