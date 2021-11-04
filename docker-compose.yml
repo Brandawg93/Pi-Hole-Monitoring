@@ -43,7 +43,7 @@ services:
     restart: unless-stopped
 
   grafana:
-    image: grafana/grafana-arm32v7-linux:latest
+    image: grafana/grafana:latest
     container_name: grafana
     depends_on:
       - influxdb
