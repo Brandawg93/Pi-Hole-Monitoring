@@ -34,7 +34,7 @@ services:
     restart: always
 
   influxdb:
-    image: influxdb:1.8.4
+    image: influxdb:1.8
     container_name: influxdb
     networks:
       influxdb:
