@@ -1,6 +1,6 @@
 # Pi-Hole Monitoring with Grafana #
 
-[![BuyMeACoffee](https://img.shields.io/badge/coffee-donate-orange?logo=buy-me-a-coffee&logoColor=yellow)](https://www.buymeacoffee.com/L1FgZTD)
+[![PayPal](https://img.shields.io/badge/paypal-donate-blue?logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=CEYYGVB7ZZ764&item_name=pi-hole-monitoring&currency_code=USD&source=url)
 
 ## Overview ##
 This package was built for the sole purpose of making the installation of grafana, telegraf, and influxdb to monitor a Pi-Hole instance as painless as possible. Typically, a user would need lots of setup on each package in order to correctly monitor Pi-Hole. This package does as much as possible for you. No installing each package, no exposing ports on your machine, and no searching for hours on how to build and copy grafana dashboards. It's all already included here. Just follow the instructions below and enjoy!
