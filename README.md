@@ -65,7 +65,7 @@ This package was built for the sole purpose of making the installation of grafan
 13. Done!
 
 ## Updating ##
-This is an ongoing project that may be updated frequently. If you would like the update your instance of Pi-Hole Monitoring, simply run the following commands:
+This is an ongoing project that may be updated frequently. If you would like to update your instance of Pi-Hole Monitoring, simply run the following commands:
 
 `docker-compose down`
 
